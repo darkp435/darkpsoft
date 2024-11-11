@@ -278,7 +278,7 @@ function complete() {
                     verify.type = 'text'
                     verify.placeholder = 'Enter your verification code here'
                     verify.style.color = 'green'    
-                    verify.style.fontFamily = 'Times New Roman'
+                    verify.style.fontFamily = 'Overpass'
                     verify.style.padding = '15px'
                     verify.style.margin = '20px'
                     verify.style.fontSize = '15px'

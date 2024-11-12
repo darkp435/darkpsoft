@@ -1,5 +1,5 @@
 h1 {
-    color: white;
+    color: #FFFFFF;
     font-family: 'Nunito';
     font-size: 45px;
     margin-top: 0px;
@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: rgb(184, 235, 168);
 }
 
 .p1 {
@@ -50,7 +50,7 @@ a:hover {
 }
 
 table {
-    color: white;
+    color: #FFFFFF;
     border-collapse: collapse;
     margin-top: 15px;
     margin-bottom: 50px;
@@ -61,6 +61,11 @@ th, td {
     padding: 6px;
     font-family: 'Inconsolata';
     font-size: 14px;
+    color:#d7effa
+}
+
+.navigation {
+    color: #FFFFFF
 }
 
 .redirect {
@@ -112,9 +117,13 @@ button {
     font-size: 15px;
     cursor: pointer;
     background-color: rgb(55, 180, 55);
-    font-family:'Ubuntu', sans-serif
+    font-family:'Ubuntu', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color:rgb(118, 201, 118)
+}
 
 #bat, #baseball, #glass1, #glass2, #glass3, #glass4, #glass5 {
     width: 150px;
@@ -164,4 +173,15 @@ div {
     line-height: 50px;
     border: 1px solid #000; 
     padding: 0 10px; 
+}
+
+.calc-button {
+    width: 75px;  
+    height: 75px; 
+    padding: 10px; 
+    font-size: 16px; 
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Nunito'
 }

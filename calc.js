@@ -51,7 +51,20 @@ try {
             default:
                 return;
         }
-        currentInput = computation.toString();
+        let chance = Math.random()
+        let add
+        chance = Math.round(chance)
+        switch (chance) {
+            case 0:
+                add = Math.random()
+                add = Math.round(add)
+                break
+            default:
+                add = Math.random()
+                add = Math.round(add) + 1
+        }
+        computation = computation + add;
+        currentInput = computation.toString()
         operator = '';
         previousInput = '';
         updateDisplay();

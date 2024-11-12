@@ -1,3 +1,8 @@
+/*
+Source code for the beer.exe file. Copy and paste this, and compile with a C++ compiler to get the executable you want.
+This is for if you aren't using windows and need to compile it, or if you just want to review the source code for any reasons.
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>

@@ -1,72 +1,76 @@
-let currentInput = '';
-let operator = '';
-let previousInput = '';
+try {
+    let currentInput = '';
+    let operator = '';
+    let previousInput = '';
 
-const resultDiv = document.getElementById('result');
+    const resultDiv = document.getElementById('result');
 
-function updateDisplay() {
-    resultDiv.innerText = currentInput || '0';
-}
-
-function handleNumber(number) {
-    // Shift the number by 1
-    currentInput += (parseInt(number) - 1).toString();
-    updateDisplay();
-}
-
-function handleOperator(op) {
-    if (currentInput === '') return;
-    if (previousInput !== '') {
-        calculate();
+    function updateDisplay() {
+        resultDiv.innerText = currentInput || '0';  // Display 0 if currentInput is empty
     }
-    operator = op;
-    previousInput = currentInput;
-    currentInput = '';
-}
 
-function calculate() {
-    let computation;
-    const prev = parseFloat(previousInput);
-    const current = parseFloat(currentInput);
-    if (isNaN(prev) || isNaN(current)) return;
-
-    switch (operator) {
-        case '+':
-            computation = prev + current;
-            break;
-        case '-':
-            computation = prev - current;
-            break;
-        case '*':
-            computation = prev * current;
-            break;
-        case '/':
-            computation = prev / current;
-            break;
-        case '%':
-            computation = prev % current;
-            break;
-        default:
-            return;
+    function handleNumber(number) {
+        let sub = Math.random()
+        sub = Math.round(sub)
+        console.log(sub)
+        currentInput += (parseInt(number) - sub).toString();
+        updateDisplay();
     }
-    currentInput = computation.toString();
-    operator = '';
-    previousInput = '';
-    updateDisplay();
-}
 
-function clearAll() {
-    currentInput = '';
-    previousInput = '';
-    operator = '';
-    updateDisplay();
-}
+    function handleOperator(op) {
+        if (previousInput !== '') {
+            calculate();
+        }
+        operator = op;
+        previousInput = currentInput;
+        currentInput = '';
+    }
 
-function deleteLast() {
-    currentInput = currentInput.slice(0, -1);
-    updateDisplay();
-}
+    function calculate() {
+        let computation;
+        const prev = parseFloat(previousInput);
+        const current = parseFloat(currentInput);
+        if (isNaN(prev) || isNaN(current)) return;
 
+        switch (operator) {
+            case '+':
+                computation = prev + current;
+                break;
+            case '-':
+                computation = prev - current;
+                break;
+            case '*':
+                computation = prev * current;
+                break;
+            case '/':
+                computation = prev / current;
+                break;
+            case '%':
+                computation = prev % current;
+                break;
+            default:
+                return;
+        }
+        currentInput = computation.toString();
+        operator = '';
+        previousInput = '';
+        updateDisplay();
+    }
+
+    function clearAll() {
+        currentInput = '';
+        previousInput = '';
+        operator = '';
+        updateDisplay();
+    }
+
+    function deleteLast() {
+        currentInput = currentInput.slice(0, -1);
+        updateDisplay();
+    }
+} catch (error) {
+    console.error(error)
+}
 // Event listeners for buttons
 document.getElementById('b0').onclick = () => handleNumber('0');
 document.getElementById('b1').onclick = () => handleNumber('1');

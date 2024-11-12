@@ -7,8 +7,8 @@ h1 {
 }
 
 .moreinfo {
-    font-family: "Roboto Mono", monospace;
-    font-size: 12px;
+    font-family: 'Inconsolata';
+    font-size: 15px;
 }
 
 p {
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .crapautop {
-    font-family: "Roboto Mono", monospace;
+    font-family: 'Inconsolata';
 }
 
 .autoclickln {
@@ -63,7 +63,7 @@ th, td {
     font-size: 14px;
 }
 
-.autosi {
+.redirect {
     font-family: 'Overpass';
     font-size: 12px;
 }

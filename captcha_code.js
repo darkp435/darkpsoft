@@ -85,10 +85,10 @@ function complete() {
         document.querySelector('.container-img').appendChild(game4)
         game1.insertAdjacentElement('afterend', game2)
         game1.insertAdjacentElement('beforeend', game3)
-        game1.onclick = fail2
-        game2.onclick = fail2
-        game3.onclick = fail2
-        game4.onclick = fail2
+        game1.onclick = () => fail2()
+        game2.onclick = () => fail2()
+        game3.onclick = () => fail2()
+        game4.onclick = () => fail2()
         function fail2() {
             game1.remove(); game2.remove(); game3.remove(); game4.remove()
             q.textContent = 'Incorrect. You failed the captcha on level 3. You are a robot!'
@@ -302,7 +302,7 @@ function complete() {
                                 hex1.textContent = '31'
                                 hex2.textContent = "I don't knooowwwww"
                                 hex3.textContent = '*uses chatgpt for the answer*'
-                                hex4.textContent = 'HOW THE F**K DOES THIS PROVE...'
+                                hex4.textContent = 'This is pointless.'
                                 homepg.style.marginBottom = '1000000px'
                                 skip.textContent = 'Skip'
                                 skip.style.fontSize = '5px'
@@ -370,7 +370,7 @@ function complete() {
                                         if (event2.key == 'Enter') {
                                             if (this.value == rancode) {
                                                 concode.remove()
-                                                q.textContent = 'Congratulations! You are now a human. Feedback of the captcha will be piped straight to /dev/null.'
+                                                q.textContent = 'Success.'
                                                 bee = document.createElement('img')
                                                 bee.src = 'bee.png'
                                                 bee.id = 'bee'

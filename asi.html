@@ -45,19 +45,6 @@
             height: 200px;
             overflow: auto;
         }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Ubuntu';
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
@@ -68,6 +55,7 @@
         <textarea id="codeInput" placeholder="Paste your code here..." oninput="autoExpand(this)"></textarea>
         <button onclick="addSemicolons()">Add Semicolons</button>
         <pre id="output"></pre>
+        <p id="count"></p>
     </div>
     <a href="index.html" style="text-align: center;">Back to home page</a>
     <script src="asi.js"></script>

@@ -118,6 +118,7 @@ button {
     cursor: pointer;
     background-color: rgb(55, 180, 55);
     font-family:'Ubuntu', sans-serif;
+    border-radius: 3px;
     transition: background-color 0.3s ease;
 }
 

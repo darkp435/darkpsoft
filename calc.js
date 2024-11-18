@@ -6,13 +6,12 @@ try {
     const resultDiv = document.getElementById('result');
 
     function updateDisplay() {
-        resultDiv.innerText = currentInput || '0';  // Display 0 if currentInput is empty
+        resultDiv.innerText = currentInput || Math.round(Math.random() * Number.MAX_SAFE_INTEGER);  // Display 0 if currentInput is empty
     }
 
     function handleNumber(number) {
         let sub = Math.random()
         sub = Math.round(sub)
-        console.log(sub)
         currentInput += (parseInt(number) - sub).toString();
         updateDisplay();
     }
@@ -34,19 +33,19 @@ try {
 
         switch (operator) {
             case '+':
-                computation = prev + current;
-                break;
-            case '-':
                 computation = prev - current;
                 break;
-            case '*':
-                computation = prev * current;
-                break;
-            case '/':
+            case '-':
                 computation = prev / current;
                 break;
-            case '%':
+            case '*':
                 computation = prev % current;
+                break;
+            case '/':
+                computation = prev + current;
+                break;
+            case '%':
+                computation = prev * current;
                 break;
             default:
                 return;

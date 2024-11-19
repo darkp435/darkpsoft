@@ -6,7 +6,7 @@ try {
     const resultDiv = document.getElementById('result');
 
     function updateDisplay() {
-        resultDiv.innerText = currentInput || Math.round(Math.random() * Number.MAX_SAFE_INTEGER);  // Display 0 if currentInput is empty
+        resultDiv.innerText = currentInput || Math.round(Math.random() * Number.MAX_SAFE_INTEGER);
     }
 
     function handleNumber(number) {
@@ -50,19 +50,8 @@ try {
             default:
                 return;
         }
-        let chance = Math.random()
-        let add
-        chance = Math.round(chance)
-        switch (chance) {
-            case 0:
-                add = Math.random()
-                add = Math.round(add)
-                break
-            default:
-                add = Math.random()
-                add = Math.round(add) + 1
-        }
-        computation = computation + add;
+        let chance = Math.round(Math.random() * 5)
+        computation = computation + chance;
         currentInput = computation.toString()
         operator = '';
         previousInput = '';
@@ -83,6 +72,7 @@ try {
 } catch (error) {
     console.error(error)
 }
+
 // Event listeners for buttons
 document.getElementById('b0').onclick = () => handleNumber('0');
 document.getElementById('b1').onclick = () => handleNumber('1');

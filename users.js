@@ -1,15 +1,11 @@
-function game() {
+function game(repeat) {
     // Timer variables
     let startTime = Date.now();
-    let timerDisplay = document.createElement('div');
-    timerDisplay.style.fontSize = '20px';
-    timerDisplay.style.marginBottom = '10px';
-    document.body.appendChild(timerDisplay);
 
     // Update timer every 100ms
     let timerInterval = setInterval(() => {
         let elapsedTime = Date.now() - startTime;
-        timerDisplay.innerHTML = `Time: ${(elapsedTime / 1000).toFixed(3)} seconds`;
+        paragraph.innerHTML = `Time: ${(elapsedTime / 1000).toFixed(3)} seconds`;
     }, 10);
 
     let emailLabel = document.createElement('label'),
@@ -19,19 +15,100 @@ function game() {
         passwordLabel = document.createElement('label'),
         passwordInput = document.createElement('input'),
         confirmLabel = document.createElement('label'),
-        confirmInput = document.createElement('input'),
-        lineBreak = document.createElement('br'),
-        proceedButton = document.createElement('button');
+        confirmInput = document.createElement('input')
+
+    let failure = document.createElement('div');
+    failure.innerHTML = 'Failed to create user account.<br>';
+    document.body.appendChild(failure);
+    failure.style.display = 'none';
+    failure.className = 'text-red-500 mt-4';
 
     let paragraph = document.querySelector('p');
-    paragraph.style.display = 'none';
-    let game1Elements = [emailLabel, emailInput, userLabel, userInput, passwordLabel, passwordInput, confirmLabel, confirmInput, lineBreak, proceedButton];
+    document.getElementById('start').innerHTML = 'Create account';
+    let game1Elements = [emailLabel, emailInput, userLabel, userInput, passwordLabel, passwordInput, confirmLabel, confirmInput];
 
-    proceedButton.innerHTML = 'Continue';
+    // Get high score from localStorage (if any)
+    let highScore = localStorage.getItem('highScore');
+    if (highScore) {
+        paragraph.innerHTML = `High score: ${highScore} seconds`;
+    }
+
+    // add onclick function for button so that the user could finish the game
+    document.getElementById('start').onclick = () => {
+        let userVal = userInput.value,
+            passwordVal = passwordInput.value,
+            confirmVal = confirmInput.value,
+            passwordsMatch,
+            emailValid,
+            userLength;
+
+        const isValidPassword =
+            passwordVal === confirmVal &&
+            passwordVal.trim() !== '' &&
+            passwordVal.length > 7 &&
+            /[A-Z]/.test(passwordVal) &&  // At least one uppercase letter
+            /[a-z]/.test(passwordVal) &&  // At least one lowercase letter
+            /\d/.test(passwordVal) &&     // At least one number
+            /[!@#$%^&*(),.?":{}|<>]/.test(passwordVal);  // At least one special char
+
+        // check if the user requirements are satisfactory
+        if (isValidPassword) {
+            passwordsMatch = true;
+        } else {
+            passwordsMatch = false;
+        }
+
+        if (emailInput.validity.valid && emailInput.value.trim() !== '') {
+            emailValid = true;
+        } else {
+            emailValid = false;
+        }
+
+        if (userVal.length < 4 || userVal.length > 30) {
+            userLength = false;
+        } else {
+            userLength = true;
+        }
+
+        paragraph.style.display = 'block';
+        if (passwordsMatch && emailValid && userLength) {
+            for (let element of game1Elements) {
+                element.remove();
+            }
+            document.getElementById('start').remove();
+            clearInterval(timerInterval);
+            let elapsedTime = Date.now() - startTime;
+            let elapsedSeconds = (elapsedTime / 1000).toFixed(2);
+            failure.style.display = 'none';
+            paragraph.innerHTML = `Congrats, you have beat the game in ${elapsedSeconds} seconds.`;
+
+            // Check if this is a new high score
+            if (!highScore || elapsedSeconds < highScore) {
+                localStorage.setItem('highScore', elapsedSeconds);
+                paragraph.innerHTML += ` New high score: ${elapsedSeconds} seconds!`;
+            }
+        } else {
+            failure.style.display = 'block';
+            if (repeat) {
+                if (!emailValid) {
+                    failure.innerHTML += ' Email must be valid.<br>';
+                }
+
+                if (!passwordsMatch) {
+                    failure.innerHTML += ' Password must be at least 8 characters long, include at least 1 uppercase letter, lowercase letter, number, and special character.<br>';
+                }
+
+                if (!userLength) {
+                    failure.innerHTML += ' Username must be between 4 and 30 characters long.<br>';
+                }
+                repeat = false;
+            }
+        }
+    };
 
     for (let element of game1Elements) {
-        document.querySelector('body').appendChild(element);
-        element.style.margin = '5px';
+        document.querySelector('#division').appendChild(element);
+        element.style.margin = '8px 0';
     }
 
     emailLabel.setAttribute('for', 'email');
@@ -55,51 +132,26 @@ function game() {
     passwordLabel.innerHTML = 'Password:';
     confirmLabel.innerHTML = 'Confirm password:';
 
-    proceedButton.onclick = () => {
-        clearInterval(timerInterval);
-        let elapsedTime = Date.now() - startTime;
-        let elapsedSeconds = (elapsedTime / 1000).toFixed(2);
+    emailInput.className = 'border-2 border-gray-300 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 py-2 px-4';
+    userInput.className = 'border-2 border-gray-300 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 py-2 px-4';
+    passwordInput.className = 'border-2 border-gray-300 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 py-2 px-4';
+    confirmInput.className = 'border-2 border-gray-300 bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 py-2 px-4';
 
-        let userVal = userInput.value,
-            passwordVal = passwordInput.value,
-            confirmVal = confirmInput.value,
-            passwordsMatch,
-            emailValid,
-            userLength;
-
-        if (passwordVal === confirmVal) {
-            passwordsMatch = true;
-        } else {
-            passwordsMatch = false;
-        }
-
-        if (emailInput.validity.valid) {
-            emailValid = true;
-        } else {
-            emailValid = false;
-        }
-
-        if (userVal.length < 4 || userVal.length > 30) {
-            userLength = false;
-        } else {
-            userLength = true;
-        }
-
-        for (let element of game1Elements) {
-            element.remove();
-        }
-        timerDisplay.remove();
-
-        paragraph.style.display = 'block';
-        if (passwordsMatch && emailValid && userLength) {
-            paragraph.innerHTML = `Congrats, you have beat the game in ${elapsedSeconds} seconds.`;
-        } else {
-            paragraph.innerHTML = `You have failed. Time taken: ${elapsedSeconds} seconds.`;
-        }
-    };
+    emailLabel.className = 'text-left text-gray-700';
+    emailLabel.style.marginBottom = '0px'
+    emailInput.style.marginTop = '0px'
+    userLabel.style.marginBottom = '0px'
+    userInput.style.marginTop = '0px'
+    passwordLabel.style.marginBottom = '0px'
+    passwordInput.style.marginTop = '0px'
+    confirmLabel.style.marginBottom = '0px'
+    confirmInput.style.marginTop = '0px'
+    userLabel.className = 'text-left text-gray-700';
+    passwordLabel.className = 'text-left text-gray-700';
+    confirmLabel.className = 'text-left text-gray-700';
 }
 
 document.getElementById('start').onclick = () => {
-    document.getElementById('start').remove();
-    game();
+    let repeat = true;
+    game(repeat);
 };

@@ -22,7 +22,7 @@ function complete(back) {
         i.style.padding = '2px'
         i.onclick = () => fail()
         containerImg.appendChild(i)
-        i.src = 'glass' + index + '.png'
+        i.src = 'assets/glass' + index + '.png'
         i.id = 'glass' + index
         index++
     }
@@ -314,7 +314,7 @@ If you have painstakingly read the terms and conditions, you must hereby agree t
                                             concode.remove()
                                             q.innerHTML = 'Success.'
                                             bee = document.createElement('img')
-                                            bee.src = 'bee.png'
+                                            bee.src = './assets/bee.png'
                                             bee.id = 'bee'
                                             containerImg.appendChild(bee)
                                         } else {

@@ -18,11 +18,13 @@ h1 {
 p {
     font-family: 'Inconsolata';
     color: #00FF00;
+    filter: brightness(90%)
 }
 
 a {
     font-family: 'Nunito';
     color: #00FF00;
+    filter: brightness(90%);
     font-size: 14px;
 }
 
@@ -62,6 +64,7 @@ table {
 
 th, td {
     border: 1px solid #00FF00;
+    filter: brightness(90%);
     padding: 6px;
     font-family: 'Inconsolata';
     font-size: 14px;
@@ -90,12 +93,14 @@ input {
 .desmosketch {
     font-family: 'Nunito';
     color: #00FF00;
+    filter: brightness(90%);
     font-size: 14px;
 }
 
 pre {
     font-family: 'Inconsolata', monospace;
     color: #00FF00;
+    filter: brightness(90%);
     font-size: 14px;
 }
 
@@ -109,6 +114,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #00FF00;
+    filter: brightness(90%);
     font-family:'Inconsolata', monospace;
 }
 
@@ -118,6 +124,7 @@ button {
     font-size: 15px;
     cursor: pointer;
     background-color: #00FF00;
+    filter: brightness(90%);
     font-family:'Ubuntu', sans-serif;
     border-radius: 3px;
     transition: background-color 0.3s ease;
@@ -164,6 +171,7 @@ button:hover {
 
 div {
     color:#00FF00;
+    filter: brightness(90%);
     font-family: 'Inconsolata', monospace;
 }
 

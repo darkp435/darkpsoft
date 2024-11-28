@@ -11,12 +11,8 @@ void autoClick(int interval_ms) {
             exit(0);
         }
 
-        // simulate mouse press
         mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-        // simulate mouse release
         mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-
-        // wait for the specified interval
         std::this_thread::sleep_for(std::chrono::milliseconds(interval_ms));
     }
 }

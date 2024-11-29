@@ -1,41 +1,54 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
-int main() {
-    int bottles;
-    string output;
-    string *song = new string;
-    cout << "How many bottles of beer on the wall?" << endl;
-    cin >> bottles;
-    cout << "What file to output the song to?" << endl;
-    cin >> output;
-    cout << "Generating song..." << endl;
-
-    int startBottles = bottles; // Store the original number of bottles
-
-    while (bottles > 0) {
-        *song += to_string(bottles) + " bottles of beer on the wall, \n";
-        *song += to_string(bottles) + " bottles of beer!\n";
-        --bottles;
-        *song += "Take one down, pass it around, \n";
-        *song += to_string(bottles) + " bottles of beer on the wall.\n\n";
-    }
-
-    *song += "No more bottles of beer on the wall, no more bottles of beer.\n";
-    *song += "Go to the store and buy some more, " + to_string(startBottles) + " bottles of beer on the wall.\n";
-    cout << "Successfully generated song" << endl;
-
+void createSong(int bottles, string output) {
     ofstream outFile(output);
     if (outFile.is_open()) {
-        outFile << *song;
+        while (bottles > 0) {
+            if (bottles == 1) {
+                outFile << "1 bottle of beer on the wall,\n";
+                outFile << "1 bottle of beer!\n";
+                --bottles;
+                outFile << "Take one down, pass it around\n";
+                outFile << "No bottles of beer on the wall.\n\n";
+            } else {
+                outFile << to_string(bottles) + " bottles of beer on the wall,\n";
+                outFile << to_string(bottles) + " bottles of beer!\n";
+                --bottles;
+                outFile << "Take one down, pass it around\n";
+                outFile << to_string(bottles) + " bottles of beer on the wall.\n\n";
+            }
+        }
+
+        outFile << "No more bottles of beer on the wall, no more bottles of beer.\n";
+        outFile << "Go to the store and buy some more, 100 bottles of beer on the wall.\n";
+        
         outFile.close();
         cout << "Song written to " << output << endl;
-        return 0;
+        return;
     } else {
         cerr << "Unable to open file" << endl;
-        return 1;
+        return;
     }
+}
+
+int main() {
+    int bottles;
+    string output, song;
+    cout << "Bottles of beer on the wall: " << endl;
+    cin >> bottles;
+    cout << "Output file: " << endl;
+    cin >> output;
+    // handle edge case in case the user enters a negative number
+    if (bottles < 1) {
+        cout << "Please enter a positive number that is bigger than 0." << endl;
+        return 0;
+    }
+
+    createSong(bottles, output);
+    return 0;
 }

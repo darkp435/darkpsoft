@@ -43,7 +43,7 @@ int main() {
     cin >> bottles;
     cout << "Output file: " << endl;
     cin >> output;
-    // handle edge case in case the user enters a negative number or 0 (edge case)
+    // handle edge case in casef the user enters a negative number or 0 (edge case)
     if (bottles < 1) {
         cout << "Please enter a positive number that is bigger than 0." << endl;
         return 0;

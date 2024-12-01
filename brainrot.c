@@ -1,97 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+#include<stdio.h> <string.h> <stdlib.h>
 #define MEM_SIZE 30000
-
-// Function to translate brainrot to brainfuck
-void brainrotToBrainfuck(const char *brainrot_code, char *bf_code) {
-    while (*brainrot_code) {
-        if (strncmp(brainrot_code, "skibidi", 7) == 0) {
-            strcat(bf_code, "+");
-            brainrot_code += 7;
-        } else if (strncmp(brainrot_code, "sigma", 5) == 0) {
-            strcat(bf_code, "-");
-            brainrot_code += 5;
-        } else if (strncmp(brainrot_code, "rizz", 4) == 0) {
-            strcat(bf_code, ">");
-            brainrot_code += 4;
-        } else if (strncmp(brainrot_code, "ohio", 4) == 0) {
-            strcat(bf_code, "<");
-            brainrot_code += 4;
-        } else if (strncmp(brainrot_code, "gyatt", 5) == 0) {
-            strcat(bf_code, "[");
-            brainrot_code += 5;
-        } else if (strncmp(brainrot_code, "fanum tax", 9) == 0) {
-            strcat(bf_code, "]");
-            brainrot_code += 9;
-        } else if (strncmp(brainrot_code, "grimace shake", 13) == 0) {
-            strcat(bf_code, ".");
-            brainrot_code += 13;
-        } else if (strncmp(brainrot_code, "let him cook", 12) == 0) {
-            strcat(bf_code, ",");
-            brainrot_code += 12;
-        } else {
-            brainrot_code++;  // Skip unrecognized characters
-        }
-    }
-}
-
-// Function to run Brainfuck code
-void runBrainfuck(const char *bf_code) {
-    unsigned char memory[MEM_SIZE] = {0};
-    int pointer = 0;
-    int pc = 0;  // Program counter
-    char *code = (char *)bf_code;
-    
-    while (code[pc]) {
-        switch (code[pc]) {
-            case '>': pointer++; break;
-            case '<': pointer--; break;
-            case '+': memory[pointer]++; break;
-            case '-': memory[pointer]--; break;
-            case '.': 
-                putchar(memory[pointer]);  // grimace shake -> output
-                putchar('\n');  // Print a newline after the output
-                break;
-            case ',': {
-                memory[pointer] = getchar();  // let him cook -> input
-                break;
-            }
-            case '[':
-                if (memory[pointer] == 0) {
-                    int loop = 1;
-                    while (loop > 0) {
-                        pc++;
-                        if (code[pc] == '[') loop++;
-                        if (code[pc] == ']') loop--;
-                    }
-                }
-                break;
-            case ']':
-                if (memory[pointer] != 0) {
-                    int loop = 1;
-                    while (loop > 0) {
-                        pc--;
-                        if (code[pc] == ']') loop++;
-                        if (code[pc] == '[') loop--;
-                    }
-                }
-                break;
-        }
-        pc++;
-    }
-}
-
-int main() {
-    const char *brainrot_code = "skibidi rizz sigma grimace shake let him cook grimace shake";
-    char bf_code[1024] = "";  // Buffer to hold Brainfuck code
-
-    // Step 1: Convert brainrot to Brainfuck code
-    brainrotToBrainfuck(brainrot_code, bf_code);
-
-    // Step 2: Run the converted Brainfuck code
-    runBrainfuck(bf_code);
-
-    return 0;
-}
+// brainrot compiler source code
+void d(const char*a,char*b){while(*a){if(strncmp(a,"skibidi",7)==0){strcat(b,"+");a+=7;}else if(strncmp(a,"sigma",5)==0){strcat(b,
+"-");a+=5;}else if(strncmp(a,"rizz",4)==0){strcat(b, ">");a+=4;}else if(strncmp(a,"ohio",4)==0){strcat(b,"<");a+=4;}else if(strncmp
+(a, "gyatt", 5)==0){strcat(b,"[");a+=5;}else if(strncmp(a,"fanum tax",9)==0){strcat(b,"]");a+=9;}else if(strncmp(a,"grimace shake",
+13)==0){strcat(b,".");a+=13;}else if(strncmp(a,"let him cook",12)==0){strcat(b,",");a+=12;}else{a++;}}}void e(const char*b){
+unsigned char g[MEM_SIZE]={0};int c=0;int j=0;char*f=(char*)b;while(f[j]){switch(f[j]){case'>':c++;break;case'<':c--;break;case'+':
+g[c]++;break;case'-':g[c]--;break;case'.':putchar(g[c]);putchar('\n');break;case',':{g[c]=getchar();break;}case'[':if(g[c]==0){
+int h=1;while(h>0){j++;if(f[j]=='[')h++;if(f[j]==']')h--;}}break;case']':if(g[c]!=0){int h=1;while(h>0){j--;if(f[j]==']')h++;if
+(f[j]=='[')h--;}}break;}j++;}}int main(){char a[1024];char b[1024]="";printf("Enter Brainrot code: ");fgets(a,sizeof(a),stdin);
+a[strcspn(a,"\n")]=0;d(a,b);e(b);return 0;}

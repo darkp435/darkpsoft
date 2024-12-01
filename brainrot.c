@@ -1,4 +1,6 @@
-#include<stdio.h> <string.h> <stdlib.h>
+#include<stdio.h> 
+#include<string.h> 
+#include<stdlib.h>
 #define MEM_SIZE 30000
 // brainrot compiler source code
 void d(const char*a,char*b){while(*a){if(strncmp(a,"skibidi",7)==0){strcat(b,"+");a+=7;}else if(strncmp(a,"sigma",5)==0){strcat(b,

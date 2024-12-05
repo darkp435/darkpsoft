@@ -4,6 +4,9 @@ let q = document.getElementById('question'),
     containerImg = document.querySelector('.container-img')
 
 function complete(back) {
+    document.querySelector('h1').className = 'text-lg'
+    document.querySelector('p').className = 'hidden'
+    homepg.className = 'hidden'
     document.getElementById('bat').remove()
     document.getElementById('baseball').remove()
     q.innerHTML = 'Please select glass.'
@@ -71,174 +74,12 @@ function succeed() {
             back.style.display = 'none'
             game.onclick = null
             q.innerHTML = 'Please agree to the terms and conditions.'
-            terms = document.createElement('pre')
-            terms.innerHTML = `
-1. Introduction
-
-Welcome to darkpsoft! These Terms and Conditions ("Terms") govern your use of our website, products, and services provided by darkp ("we," "us," "our"). By accessing or 
-using our website, applications, or services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our website or 
-services. These Terms constitute a not legal agreement between you and darkpsoft, and by using our services, you acknowledge that you have read, understood, and agreed 
-to be bound by them. We may update these Terms from time to time, and your continued use of our services after any changes signifies your acceptance of the revised 
-Terms. If you have any questions or concerns about these Terms, please contact us at [REDACTED]. If you notice any bugs, please go into the console to get the details
-and provide it to us. Violation of these terms will give you +1 strike and limit some functionalities of the product or website.
-
-2. Privacy policy
-
-Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah b2ah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah foo bar foo bar foo bar foo bar foo bar foo bar foo bar.
-
-3. Use of products
-
-Blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah foo bar. 
-
-4. Blah blah blah
-
-Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-                        
-5. Foo bar
-
-Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah b1ah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-
-6. Use of data
-
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef Dead b4ef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-
-7. Other legal stuff
-
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef De3d beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef 
-dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-
-8. General advice
-
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef dead beef Dead beef dead beef 
-
-9. Conclusion
-
-If you have painstakingly read the terms and conditions, you must hereby agree to it in order to continue using this product.
-            `
+            terms = document.getElementById('terms')
+            terms.className = 'block'
             agree = document.createElement('button')
             agree.innerHTML = 'I have painstakingly read the terms and conditions, and hereby sign it with my blood.'
-            agree.onclick = () => code()
-            containerImg.appendChild(terms)
+            agree.onclick = () => agree.remove()
+            terms.onclick = () => code()
             document.querySelector('.agreed').appendChild(agree)
             function code() {
                 terms.remove()
@@ -246,9 +87,8 @@ If you have painstakingly read the terms and conditions, you must hereby agree t
                 q.innerHTML = 'Please enter the verification code.'
                 verify = document.createElement('input')
                 verify.type = 'text'
-                verify.placeholder = 'Enter your verification code here'
-                verify.style.color = 'green'    
-                verify.style.fontFamily = 'Overpass'
+                verify.placeholder = 'Enter your verification code here' 
+                verify.className = 'bg-black text-white border border-white'
                 verify.style.padding = '15px'
                 verify.style.margin = '20px'
                 verify.style.fontSize = '15px'
@@ -296,10 +136,10 @@ If you have painstakingly read the terms and conditions, you must hereby agree t
                             function finish() {
                                 q.innerHTML = 'To confirm that you are not a robot, enter the secondary confirmatory code.'
                                 hex1.remove(); hex2.remove(); hex3.remove(); hex4.remove(); skip.remove()
-                                concode = document.createElement('input')
+                                let concode = document.createElement('input')
                                 concode.type = 'text'
                                 concode.placeholder = 'Enter your verification code here'
-                                concode.style.color = 'green'    
+                                concode.style.color = 'green'
                                 concode.style.padding = '15px'
                                 concode.style.margin = '20px'
                                 concode.style.fontSize = '15px'

@@ -29,6 +29,7 @@ function complete(back) {
         i.id = 'glass' + index
         index++
     }
+    real_glass.style.color = 'black'
     real_glass.innerHTML = 'glass'
     real_glass.id = 'real_glass'
     document.querySelector('.hidden-glass').appendChild(real_glass)
@@ -79,7 +80,7 @@ function succeed() {
             agree = document.createElement('button')
             agree.innerHTML = 'I have painstakingly read the terms and conditions, and hereby sign it with my blood.'
             agree.onclick = () => agree.remove()
-            terms.onclick = () => code()
+            document.getElementById('realAgree').onclick = () => code()
             document.querySelector('.agreed').appendChild(agree)
             function code() {
                 terms.remove()
@@ -139,6 +140,7 @@ function succeed() {
                                 let concode = document.createElement('input')
                                 concode.type = 'text'
                                 concode.placeholder = 'Enter your verification code here'
+                                concode.className = 'bg-black text-white border border-white'
                                 concode.style.color = 'green'
                                 concode.style.padding = '15px'
                                 concode.style.margin = '20px'
@@ -152,14 +154,35 @@ function succeed() {
                                     if (event2.key == 'Enter') {
                                         if (concode.value == rancode) {
                                             concode.remove()
-                                            q.innerHTML = 'Success.'
-                                            bee = document.createElement('img')
-                                            bee.src = './assets/bee.png'
-                                            bee.id = 'bee'
-                                            containerImg.appendChild(bee)
+                                            q.textContent = 'Evaluate 0.1 + 0.2'
+                                            let final = document.createElement('input')
+                                            final.type = 'text'
+                                            final.placeholder = 'Input answer here'
+                                            final.style.color = 'green'
+                                            final.style.padding = '15px'
+                                            final.style.margin = '20px'
+                                            final.style.fontSize = '15px'
+                                            final.className = 'bg-black text-white border border-white'
+                                            containerImg.appendChild(final)
+                                            final.addEventListener("keydown", function(finalEvent) {
+                                                if (finalEvent.key == 'Enter') {
+                                                    final.remove()
+                                                    if (final.value == 0.1 + 0.2) {
+                                                        q.textContent = 'CAPTCHA complete! You are a human! (Note: all feedback will be piped to /dev/null)'
+                                                        let bee = document.createElement('img')
+                                                        bee.src = 'assets/bee.png'
+                                                        homepg.style.display = 'block'
+                                                        containerImg.appendChild(bee)
+                                                    } else {
+                                                        q.textContent = "That's not the correct answer. As a result, you failed."
+                                                        back.style.display = 'block'
+                                                    }
+                                                }
+                                            })
                                         } else {
                                             concode.remove()
-                                            q.innerHTML = 'You failed on the last level!'
+                                            q.innerHTML = 'Verification code incorrect. You are a robot.'
+                                            back.style.display = 'block'
                                         }
                                     }
                                 })

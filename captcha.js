@@ -30,6 +30,7 @@ function complete(back) {
         index++
     }
     real_glass.style.color = 'black'
+    real_glass.className = 'cursor-default'
     real_glass.innerHTML = 'glass'
     real_glass.id = 'real_glass'
     document.querySelector('.hidden-glass').appendChild(real_glass)
@@ -97,7 +98,7 @@ function succeed() {
                 // entering the code to proceed
                 verify.addEventListener("keydown", function(event) {
                     if (event.key === 'Enter') {
-                        if (verify.value === "5277") {
+                        if (verify.value === "527722975") {
                             verify.remove()
                             q.innerHTML = 'What is the value for 1, in hexadecimal?'
                             let hex1 = document.createElement('p'),
@@ -171,7 +172,7 @@ function succeed() {
                                                         q.textContent = 'CAPTCHA complete! You are a human! (Note: all feedback will be piped to /dev/null)'
                                                         let bee = document.createElement('img')
                                                         bee.src = 'assets/bee.png'
-                                                        homepg.style.display = 'block'
+                                                        homepg.className = 'flex justify-center'
                                                         containerImg.appendChild(bee)
                                                     } else {
                                                         q.textContent = "That's not the correct answer. As a result, you failed."

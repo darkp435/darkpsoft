@@ -4,6 +4,8 @@ let q = document.getElementById('question'),
     containerImg = document.querySelector('.container-img')
 
 function complete(back) {
+    let index = 1
+    let canContinue = false
     document.getElementById('bat').remove()
     document.getElementById('baseball').remove()
     q.innerHTML = 'Please select glass.'
@@ -13,28 +15,29 @@ function complete(back) {
         glass3 = document.createElement('input'),
         glass4 = document.createElement('input'),
         glass5 = document.createElement('input'),
-        real_glass = document.createElement('p')
+        realGlass = document.createElement('p')
     glasses = [glass1, glass2, glass3, glass4, glass5]
-    let index = 1
+    realGlass.style.color = 'black'
+    realGlass.className = 'cursor-default'
+    realGlass.innerHTML = 'glass'
+    realGlass.id = 'realGlass'
+    realGlass.onclick = () => canContinue = true
     for (let i of glasses) {
         i.type = 'image'
         i.style.border = '2px solid white'
         i.style.padding = '2px'
-        i.onclick = () => fail()
+        i.onclick = () => {
+            (canContinue) ? succeed() : fail()
+        }
         containerImg.appendChild(i)
         i.src = 'assets/glass' + index + '.png'
         i.id = 'glass' + index
         index++
     }
-    real_glass.style.color = 'black'
-    real_glass.className = 'cursor-default'
-    real_glass.innerHTML = 'glass'
-    real_glass.id = 'real_glass'
-    document.querySelector('.hidden-glass').appendChild(real_glass)
-    real_glass.onclick = () => succeed()
+    document.querySelector('.hidden-glass').appendChild(realGlass)
 
     function fail() {
-        glass1.remove(); glass2.remove(); glass3.remove(); glass4.remove(); glass5.remove(); real_glass.remove()
+        glass1.remove(); glass2.remove(); glass3.remove(); glass4.remove(); glass5.remove(); realGlass.remove()
         q.innerHTML = "You failed the captcha on confirmation 2. You are a robot!"
         back.style.display = 'block'
     }
@@ -49,7 +52,7 @@ function incorrect(back) {
 
 function succeed() {
     q.innerHTML = "Select the game."
-    glass1.remove(); glass2.remove(); glass3.remove(); glass4.remove(); glass5.remove(); real_glass.remove()
+    glass1.remove(); glass2.remove(); glass3.remove(); glass4.remove(); glass5.remove(); realGlass.remove()
     let game1 = document.createElement('p'),
         game2 = document.createElement('p'),
         game3 = document.createElement('p'),
@@ -98,7 +101,7 @@ function succeed() {
                 // entering the code to proceed
                 verify.addEventListener("keydown", function(event) {
                     if (event.key === 'Enter') {
-                        if (verify.value === "527722975") {
+                        if (verify.value === "527718300") {
                             verify.remove()
                             q.innerHTML = 'What is the value for 1, in hexadecimal?'
                             let hex1 = document.createElement('p'),

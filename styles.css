@@ -120,13 +120,13 @@ body {
 
 button {
     color: #000000;
+    border: 5px solid #059905;
     padding: 10px 20px;
     font-size: 15px;
     cursor: pointer;
-    background-color: #00FF00;
+    background-color: #08d208;
     filter: brightness(90%);
-    font-family:'Ubuntu', sans-serif;
-    border-radius: 3px;
+    font-family: 'Ubuntu', sans-serif;
     transition: background-color 0.3s ease;
 }
 
@@ -190,7 +190,7 @@ div {
     height: 75px; 
     padding: 10px; 
     font-size: 25px; 
-    margin: 2px;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Nunito'

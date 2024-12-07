@@ -12,12 +12,13 @@
         <title>Captcha game</title>
     </head>
     <body>
-        <h1 style="text-align: center;">The captcha <span id="captchatitle">game</span></h1>
-        <p style="text-align: center;">The game about completing a made-up captcha.</p>
-        <div style="font-family: 'Overpass'; color: #00FF00; margin-bottom: 15px; text-align: center;" id="question">Please select the bat.</div>
+        <h1 style="text-align: center;">A Captcha <span id="captchatitle">Game</span></h1>
+        <p style="text-align: center;">A game about completing a made-up captcha designed to make you rage. Click the button below to start.</p>
+        <div style="font-family: 'Overpass'; color: #00FF00; margin-bottom: 15px; text-align: center;" id="question"></div>
         <div class="container-img">
-            <input type="image" src="assets/bat.png" id="bat" style="border: 2px, solid white; padding: 2px;">
-            <input type="image" src="assets/baseballbat.png" id="baseball" style="border: 2px, solid white; padding: 2px">
+            <button id="start">I'm not a robot</button>
+            <input type="image" src="assets/bat.png" id="bat" style="border: 2px solid white; padding: 2px; display: none;">
+            <input type="image" src="assets/baseballbat.png" id="baseball" style="border: 2px solid white; padding: 2px; display: none;">
             <pre id="terms" class="hidden" style="font-family: 'Courier New', Courier, monospace">
 <strong>PIXEL435 UNOFFICIAL TERMS AND CONDITIONS VERSION 1.0 (LAST CHANGED: NEVER)</strong>
 
@@ -28,7 +29,7 @@ using our website, applications, or services, you <span id="realAgree">agree</sp
 services. These Terms constitute a not legal agreement between you and darkpsoft, and by using our services, you acknowledge that you have read, understood, and agreed 
 to be bound by them. We may update these Terms from time to time, and your continued use of our services after any changes signifies your acceptance of the revised 
 Terms. If you have any questions or concerns about these Terms, please contact us at [REDACTED]. If you notice any bugs, please go into the console to get the details
-and provide it to us. Violation of these terms will give you +1 strike and limit some functionalities of the product or website and the result with be concatenated by
+and provide it to us. Violation of these terms will give you +1 strike and limit some functionalities of the product or website and the result will be concatenated by
 the amount of characters on this terms and conditions.
 
 <strong>2. Privacy policy</strong>
@@ -186,7 +187,7 @@ If you have painstakingly read the terms and conditions, you must hereby agree t
             </pre>
         </div>
         <div class="agreed flex justify-center"></div>
-        <a href="index.html" id="homepg" class="flex justify-center">Back to home page</a>
+        <a href="index.html" id="homepg" class="flex justify-center mt-5">Back to home page</a>
         <div class="hidden-glass" style="margin-bottom: 250px;"></div>
         <script src="captcha.js"></script>
         <noscript>This website utilises javascript. Please enable javascript for functionality.</noscript>

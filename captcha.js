@@ -4,9 +4,6 @@ let q = document.getElementById('question'),
     containerImg = document.querySelector('.container-img')
 
 function complete(back) {
-    document.querySelector('h1').className = 'text-lg'
-    document.querySelector('p').className = 'hidden'
-    homepg.className = 'hidden'
     document.getElementById('bat').remove()
     document.getElementById('baseball').remove()
     q.innerHTML = 'Please select glass.'
@@ -61,9 +58,12 @@ function succeed() {
 
     for (let x of games) {
         x.innerHTML = 'game'
+        x.style.cursor = 'pointer'
+        x.style.margin = '5px'
         x.onclick = () => fail2()
         containerImg.appendChild(x)
     }
+    game1.style.color = 'yellow'
     game2.style.color = 'green'
     game3.style.color = 'red'
     game4.style.color = 'blue'
@@ -209,5 +209,15 @@ back.innerHTML = 'Try again'
 back.style.display = 'none'
 containerImg.appendChild(back)
 
-document.getElementById('bat').onclick = () => complete(back)
-document.getElementById('baseball').onclick = () => incorrect(back)
+document.getElementById('start').onclick = () => {
+    document.getElementById('start').remove()
+    q.textContent = 'Please click the bat.'
+    document.querySelector('h1').className = 'text-lg'
+    document.querySelector('p').className = 'hidden'
+    homepg.className = 'hidden'
+    document.getElementById('bat').style.display = 'block'
+    document.getElementById('baseball').style.display = 'block'
+    document.getElementById('bat').onclick = () => complete(back)
+    document.getElementById('baseball').onclick = () => incorrect(back)
+}
+

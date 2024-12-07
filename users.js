@@ -49,7 +49,8 @@ function game(repeat) {
             /[A-Z]/.test(passwordVal) &&  // At least one uppercase letter
             /[a-z]/.test(passwordVal) &&  // At least one lowercase letter
             /\d/.test(passwordVal) &&     // At least one number
-            /[!@#$%^&*(),.?":{}|<>]/.test(passwordVal);  // At least one special char
+            /[!@#$%^&*(),.?":{}|<>]/.test(passwordVal) &&  // At least one special char
+            /.*42.*/.test(passwordVal) // If 42 is present
 
         // check if the user requirements are satisfactory
         if (isValidPassword) {
@@ -95,7 +96,7 @@ function game(repeat) {
                 }
 
                 if (!passwordsMatch) {
-                    failure.innerHTML += ' Password must be at least 8 characters long, include at least 1 uppercase letter, lowercase letter, number, and special character.<br>';
+                    failure.innerHTML += ' Password must be at least 8 characters long, include at least 1 uppercase letter, lowercase letter, number, special character, and the meaning of life.<br>';
                 }
 
                 if (!userLength) {

@@ -613,6 +613,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -774,6 +778,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
@@ -787,6 +796,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
 .transition {
@@ -923,13 +937,13 @@ body {
 
 button {
   color: #000000;
+  border: 5px solid #059905;
   padding: 10px 20px;
   font-size: 15px;
   cursor: pointer;
-  background-color: #00FF00;
+  background-color: #08d208;
   filter: brightness(90%);
-  font-family:'Ubuntu', sans-serif;
-  border-radius: 3px;
+  font-family: 'Ubuntu', sans-serif;
   transition: background-color 0.3s ease;
 }
 
@@ -993,7 +1007,7 @@ div {
   height: 75px;
   padding: 10px;
   font-size: 25px;
-  margin: 2px;
+  margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Nunito'

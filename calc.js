@@ -33,19 +33,19 @@ try {
 
         switch (operator) {
             case '+':
-                computation = prev - current;
-                break;
-            case '-':
-                computation = prev / current;
-                break;
-            case '*':
-                computation = prev % current;
-                break;
-            case '/':
                 computation = prev + current;
                 break;
-            case '%':
+            case '-':
+                computation = prev - current;
+                break;
+            case '*':
                 computation = prev * current;
+                break;
+            case '/':
+                computation = prev / current;
+                break;
+            case '%':
+                computation = prev % current;
                 break;
             default:
                 return;

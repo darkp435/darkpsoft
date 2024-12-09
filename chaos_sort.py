@@ -18,7 +18,6 @@ def chaos_sort(arr):
             else:
                 i += 1
         
-        # if no changes were made, the array is sorted
         if not changes_made:
             break
     

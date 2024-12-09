@@ -18,13 +18,13 @@ h1 {
 p {
     font-family: 'Inconsolata';
     color: #00FF00;
-    filter: brightness(90%)
+    filter: brightness(85%)
 }
 
 a {
     font-family: 'Nunito';
     color: #00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-size: 14px;
 }
 
@@ -64,7 +64,7 @@ table {
 
 th, td {
     border: 1px solid #00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     padding: 6px;
     font-family: 'Inconsolata';
     font-size: 14px;
@@ -93,14 +93,14 @@ input {
 .desmosketch {
     font-family: 'Nunito';
     color: #00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-size: 14px;
 }
 
 pre {
     font-family: 'Inconsolata', monospace;
     color: #00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-size: 14px;
 }
 
@@ -114,7 +114,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-family:'Inconsolata', monospace;
 }
 
@@ -125,7 +125,7 @@ button {
     font-size: 15px;
     cursor: pointer;
     background-color: #08d208;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-family: 'Ubuntu', sans-serif;
     transition: background-color 0.3s ease;
 }
@@ -164,14 +164,14 @@ button:hover {
     margin-top: 1000000px;
 }
 
-.button-container1, .button-container2, .button-container3, .button-container4 {
+.button-container1, .button-container2, .button-container3, .button-container4{
     display: flex;
     justify-content: center;
 }
 
 div {
     color:#00FF00;
-    filter: brightness(90%);
+    filter: brightness(85%);
     font-family: 'Inconsolata', monospace;
 }
 

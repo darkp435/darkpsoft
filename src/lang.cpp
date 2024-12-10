@@ -128,6 +128,5 @@ int main(int argc, char* argv[]) {
 
     // Call the parsing function to process the markup and generate HTML
     parseMarkup(markup, outputFile);
-
-    return 0;  // Exit the program
+    return 0;
 }

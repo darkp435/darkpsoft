@@ -1,3 +1,0 @@
-paragraph (size-15): Welcome to my website!
-heading (size-30): Welcome to the future!
-div (background-color-blue): Content goes here
